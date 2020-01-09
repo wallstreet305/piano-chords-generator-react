@@ -1,0 +1,50 @@
+{
+  "name": "piano-express-react",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm install terser@3.14.1 --prefix client && npm run build --prefix client",
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "engines": {
+    "node": "12.13.0",
+    "npm": "6.7.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "@heidelpay/nodejs-sdk": "^1.2.1",
+    "body-parser": "^1.18.3",
+    "browser-util": "^1.2.0",
+    "contentful": "^7.0.5",
+    "cors": "^2.8.4",
+    "css-loader": "^1.0.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "node-fetch": "^2.3.0",
+    "request": "^2.88.0",
+    "showdown": "^1.9.0",
+    "simplemde": "^1.11.2",
+    "uglify-js": "^3.4.9",
+    "util": "^0.11.1",
+    "yarn": "^1.10.1"
+  },
+  "devDependencies": {
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
+    "concurrently": "^3.5.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "^1.0.15"
+  }
+}
